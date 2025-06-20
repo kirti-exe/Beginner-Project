@@ -51,3 +51,47 @@ char getComputerChoice(){
     }
     return 0;
 }
+
+void showChoice(char choice){
+    switch(choice){
+        case 'r': cout<<"Rock\n";
+                break;
+
+        case 'p': cout<<"Paper\n";
+                break;
+        
+        case 's': cout<<"Scissors\n";
+                break;
+    }
+}
+
+void chooseWinner(char player, char computer){
+    switch(player){
+        case 'r': if (computer == 'r'){
+                    cout<<"It's a Tie.\n";
+                } else if (computer == 'p'){
+                    cout<<"You Lose.\n";
+                } else {
+                    cout<<"You Win!\n";
+                }
+                break;
+
+        case 'p': if (computer == 'p'){
+                    cout<<"It's a Tie.\n";
+                } else if (computer == 's'){
+                    cout<<"You Lose.\n";
+                } else {
+                    cout<<"You Win!\n";
+                }
+                    break;
+
+        case 's': if (computer == 's'){
+                    cout<<"It's a Tie.\n";
+                } else if (computer == 'r'){
+                    cout<<"You Lose.\n";
+                } else {
+                    cout<<"You Win!\n";
+                }
+                    break;
+    }
+}
