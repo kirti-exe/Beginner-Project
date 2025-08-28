@@ -54,6 +54,42 @@ void simpleCalc(){
 }
 
 //----------Scientific Calculator----------//
+void scientificCalc(){
+    int choice;
+    double a, b;
+    cout<<"\n---Scientific Calculator---\n";
+    cout<<"1. Power\n2. Square Root\n3. Logarithm\n4. Sine\n5. Cosine\n6. Tangent\n";
+    cout<<"Choose: ";   cin>>choice;
+
+    switch(choice){
+        case 1: cout<<"Enter base exp: ";   cin>>a>>b;
+            cout<<pow(a,b)<<endl;
+            break;
+
+        case 2: cout<<"Enter a: ";  cin>>a;
+            cout<<sqrt(a)<<endl;
+            break;
+
+        case 3: cout<<"Enter a: ";  cin>>a;
+            cout<<log(a)<<endl;
+            break;
+
+        case 4: cout<<"Enter angle (rad): ";    cin>>a;
+            cout<<sin(a)<<endl;
+            break;
+
+        case 5: cout<<"Enter angle (rad): ";    cin>>a;
+            cout<<cos(a)<<endl;
+            break;
+
+        case 6: cout<<"Enter angle (rad): ";    cin>>a;
+            cout<<tan(a)<<endl;
+            break;
+
+        default:    cout<<"Invalid Choice\n";
+    }
+
+}
 
 //----------Programmer Calculator----------//
 
