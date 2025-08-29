@@ -2,6 +2,7 @@
 #include<algorithm>
 #include<cmath>
 #include<fstream>
+#include<bits/stdc++.h>
 using namespace std;
 //----------Utility----------//
 void saveHistory(const string& entry){
@@ -92,6 +93,37 @@ void scientificCalc(){
 }
 
 //----------Programmer Calculator----------//
+void programmerCalc(){
+    int choice;
+    int n;
+    cout<<"\n---Programmer Calculator---\n";
+    cout<<"1. Decimal to Binary\n2. Decimal to Hex\n3. Binary to Decimal\n4. Bitwise AND/OR/XOR\n";
+    cout<<"Choose: ";   cin>>choice;
+
+    switch(choice){
+        case 1: cout<<"Enter number: "; cin>>n;
+            cout<<bitset<16>(n)<<endl;
+            break;
+
+        case 2: cout<<"Enter number: "; cin>>n;
+            cout<<hex<<n<<dec<<endl;
+            break;
+
+        case 3: {
+            string bin;
+            cout<<"Enter binary: "; cin>>bin;
+            cout<<stoi(bin,0,2)<<endl;
+        }break;
+
+        case 4: {
+            int a, b;
+            cout<<"Enter a b: ";    cin>>a>>b;
+            cout<<"AND="<<(a&b)<<" OR="<<(a|b)<<" XOR="<<(a^b)<<endl;
+        }break;
+
+        default: cout<<"Invalid choice\n";
+    }
+}
 
 //----------Financial Calculator----------//
 
