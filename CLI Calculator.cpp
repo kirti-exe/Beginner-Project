@@ -126,7 +126,33 @@ void programmerCalc(){
 }
 
 //----------Financial Calculator----------//
+void financialCalc(){
+    int choice;
+    double p, r, t;
+    cout<<"\n---Financial Calculator---\n";
+    cout<<"1. Simple Interest\n2. Compound Interest\n3. EMI\n";
+    cout<<"Choose: ";   cin>>choice;
 
+    switch(choice){
+        case 1: cout<<"Enter Principal Amount, Rate of Interest, Time Duration: ";  cin>>p>>r>>t;
+            cout<<(p*r*t/100)<<endl;
+            break;
+
+        case 2: cout<<"Enter Principal Amount, Rate of Interest, Time Duration: ";  cin>>p>>r>>t;
+            cout<<p*pow((1+r/100),t)-p<<endl;
+            break;
+
+        case 3: {
+            double emi, n;
+            cout<<"Enter Principal Amount, Rate of Interest, Time Duration: ";  cin>>p>>r>>t;
+            n = t*12;
+            r = r/(12*100);
+            emi = (p*r*pow(1+r,n))/(pow(1+r,n)-1);
+            cout<<"EMI: "<<emi<<endl;
+        } break;
+
+        default: cout<<"Invalid choice\n";
+    }
 
 int main(){
     int choice;
@@ -137,6 +163,9 @@ int main(){
 
         switch(choice){
             case 1: simpleCalc();   break;
+            case 2: scientificCalc();   break;
+            case 3: programmerCalc();   break;
+            case 4: financialCalc();    break;
             case 5: cout<<"Exiting...\n";  break;
             default: cout<<"Invalid Option\n";
         }
